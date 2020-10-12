@@ -1,0 +1,236 @@
+#ItBegins
+{
+visibility: hidden;
+width:30px;
+height:30px;
+background-image:url("images/maincharacter.png");
+position:absolute;
+margin-left:280px;
+margin-top:220px;
+}
+
+#DeathAwaits
+
+{
+  margin-left:280px;
+  margin-top:10px;
+  background-image:url("images/projectile.gif");
+  height:30px;
+  width:30px;
+  visibility:hidden;
+  position:absolute;
+}
+
+.pillar
+{
+width:90px;
+height:90px;
+background-image: url("images/pillar of hope.jpg");
+position:absolute;
+}
+
+#VerzikVitur
+{
+width:90px;
+height:60px;
+background-image: url("images/finalboss.jpg");
+margin-left:250px;
+position:fixed;
+visibility: hidden;
+margin-top:-60px;
+}
+
+#gameboard
+{
+  margin-top:60px;
+}
+
+.row1
+{
+  margin-top:100px;
+}
+
+.row2
+{
+  margin-top:280px;
+}
+
+.row3
+{
+margin-top:460px;
+}
+
+.column1
+{
+margin-left:100px;
+}
+
+.column2
+{
+margin-left:400px;
+}
+
+#Pillar1 , #Pillar2, #Pillar3, #Pillar4, #Pillar5, #Pillar6
+{
+  visibility: hidden;
+}
+
+.projectile
+{
+
+}
+
+#SpecialAttackBar
+{
+position:fixed;
+visibility:hidden;
+height:10px;
+background-color:cyan;
+}
+
+#SpecialAttackBarGray
+{
+  position:fixed;
+  visibility:hidden;
+  height:10px;
+  width: 30px;
+  background-color:Gray;
+}
+
+#PillarHealthBar
+{
+  position:fixed;
+  opacity:0;
+  height:10px;
+  background-color:green;
+}
+
+#PillarHealthBarRed
+{
+  position:fixed;
+  opacity:0;
+  height:10px;
+  width:90px;
+  background-color:red;
+}
+
+#HealthBar
+{
+ height:10px;
+ width:30px;
+ position:fixed;
+ background-color:green;
+}
+
+#HealthBarRed
+{
+position:fixed;
+ height:10px;
+ width:30px;
+ background-color:red;
+ visibility: visible;
+}
+
+#dawnprojectile
+{
+  width: 30px;
+  height: 30px;
+  margin-left:299px;
+  margin-top:-35px;
+  background-image:url('images/dawnbringer.gif');
+  visibility:hidden;
+  position:fixed;
+
+}
+
+#VerzikHP, #VerzikHPRed
+{
+  width:90px;
+  height:10px;
+  margin-top:-80px;
+  margin-left:250px;
+  position:fixed;
+  opacity:0.0;
+  visibility:visible;
+}
+
+#VerzikHP
+{
+  background-color:green;
+}
+
+#VerzikHPRed
+{
+  background-color:red;
+}
+
+#music
+{
+  visibility:hidden;
+}
+
+#dawnbringerstatus
+{
+  text-align:center;
+  width:150px;
+  position:fixed;
+  font-size:12px;
+  background-color:#f2f2f2;
+  opacity:0;
+  border-radius:10px;
+  border: 1px solid black;
+}
+
+#informationprinter
+{
+  margin-left:195px;
+  text-align:center;
+  position:fixed;
+  width:200px;
+  border-radius:10px;
+  border: 1px solid black;
+  background-color:#f2f2f2;
+  opacity:0;
+}
+
+#adjustprint
+{
+  position:fixed;
+}
+
+#GameGuide
+{
+  position:fixed;
+  width:300px;
+  background-color:#f2f2f2;
+  border-radius:10px;
+  visibility:hidden;
+
+}
+
+#background
+{
+  margin-left:5px;
+  height:680px;
+  width:580px;
+  background:rgb(245,245,245);
+  position:fixed;
+  visibility:hidden;
+}
+
+#pageshift
+{
+  visibility:hidden;
+}
+
+#wegoagain
+{
+  visibility:hidden;
+  position:fixed;
+}
+
+#ResetBoard
+{
+  visibility:hidden;
+  position:fixed;
+}
