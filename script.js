@@ -821,7 +821,15 @@ function ProjectileTrace()
 	{
 		document.getElementById("dawnprojectile").style.visibility = "hidden";
 		BossHealth = BossHealth - DawnBringerBlast;
-	  document.getElementById("dawnbringerstatus").innerHTML = "The boss took " + DawnBringerBlast + " Damage! " + BossHealth + " Health remaining.";
+    if (!(BossHealth<=0))
+    {
+    document.getElementById("dawnbringerstatus").innerHTML = "The boss took " + DawnBringerBlast + " Damage! " + BossHealth + " Health remaining.";
+    }
+    else
+    {
+      document.getElementById("dawnbringerstatus").innerHTML = "The boss took " + DawnBringerBlast + " Damage! Verzik Vitur is no more!";
+    }
+
 		EmptyOut = 450;
 		LaunchTheDawn = 0;
 		StartingBlast = 0;
