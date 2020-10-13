@@ -8,7 +8,7 @@
 </head>
 <body onKeyDown = "PleaseWorkTM(event); ChargeWeapon(event); ; MenuSwapper(event);" onkeyup = "PrimeWeapon(event);" onkeypress = "KillBoss(event);" onload="ProjectileOfDeath(); PillarParameters(); DefineProjectileTarget();">
 <!-- partial:index.partial.html -->
-<div> <input id = "start" type = "button" value="Start the game."</input> <input id= "guide" type = "button" value="Guide to the video game."</input> </div>
+<div> <input id = "start" type = "button" value="Start the game."></input> <input id= "guide" type = "button" value="Guide to the video game."></input> <input id = "start2" type = "button" value="Start the game (Hard Mode)."> </input> </div>
 
 
 <div id = "GameGuide">
@@ -37,7 +37,7 @@
 <div id = "Pillar4" class ="pillar row2 column2"> </div>
 <div id = "Pillar5" class ="pillar row3 column1"> </div>
 <div id = "Pillar6" class ="pillar row3 column2"> </div>
-<div id = "DeathAwaits" class = "projectile"> </div>
+
 
 
 </div>
@@ -49,9 +49,14 @@
 <div id = "HealthBarRed"> </div>
 <div id = "HealthBar"> </div>
 <p id = "informationprinter"> </p>
+<div id = "DeathAwaits" class = "projectile"> </div>
 <div id = "adjustprint"><p id = "dawnbringerstatus"> </p></div>
 
 <div id = "ResetBoard"> <input id = "wegoagain" type= "button" value = "Play Again"> </input> </div>
+
+<input id = "TotalRecall" type= "button" value = "Back to the menu!">
+
+<div id = "winner"> <p id = "MissionComplete"> </p> </div>
 
 
 

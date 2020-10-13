@@ -4,7 +4,7 @@ visibility: hidden;
 width:30px;
 height:30px;
 background-image:url("images/maincharacter.png");
-position:absolute;
+position:fixed;
 margin-left:280px;
 margin-top:220px;
 }
@@ -227,10 +227,49 @@ position:fixed;
 {
   visibility:hidden;
   position:fixed;
+  margin-left:240px;
+  margin-top:300px;
+  border-radius:5px;
+  font-size:20px
+}
+
+#TotalRecall
+{
+  visibility:hidden;
+  position:fixed;
+  margin-left:210px;
+  margin-top:300px;
+  border-radius:5px;
+  font-size:20px
 }
 
 #ResetBoard
 {
   visibility:hidden;
   position:fixed;
+}
+
+#winner
+{
+  visibility:visible;
+  position:fixed;
+}
+
+#MissionComplete
+{
+  margin-left:195px;
+  text-align:center;
+  position:fixed;
+  width:200px;
+  font-size:16px;
+  margin-top:60px;
+  border-radius:10px;
+  border: 1px solid black;
+  background-color:#f2f2f2;
+  visibility: hidden;
+}
+
+#start2
+{
+  visibility: hidden;
 }

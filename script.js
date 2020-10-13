@@ -1,5 +1,5 @@
-var BossHealth = 30000;
-var PlayerHP = 200;
+var BossHealth = 15000;
+var PlayerHP = 400;
 var PillarOne = 600;
 var PillarTwo = 600;
 var PillarThree = 600;
@@ -13,7 +13,7 @@ var MagneticEyes = 0;
 var SafetyProtocol = 0;
 var ReadyAimFire = 0;
 
-var PrimedProjectile = 1;
+var PrimedProjectile = 0;
 var Target = 0;
 
 var HideState = 0;
@@ -54,17 +54,21 @@ var DisplayOfDeath = 0;
 
 var TimeTracker = 0;
 var EndTime = 0;
-var FareWell = 1000;
+var FareWell = 300;
 var HideMessage = 0;
 var killmusicfunction = 0;
 var EnragePriority = 0;
 var Page = 1;
 var ShowMenu = 0;
 
+var HardMode = 1;
+var Completion = 0;
+var HardModeDone = 0;
+
 var myVar = setInterval(ProjectileOfDeath, 1);
 
 
-var myVar = setInterval(DefineProjectileTarget, 10);
+var myVar = setInterval(DefineProjectileTarget, 12);
 
 var myVar = setInterval(PillarParameters, 5);
 
@@ -80,6 +84,8 @@ var myVar = setInterval(DisplayMessage, 1);
 
 var myVar = setInterval(TrackOfTime, 1);
 
+var myVar = setInterval(TrackTheSeconds, 1000);
+
 var myVar = setInterval(HideInfoPrints, 12);
 
 var myVar = setInterval(GuideToTheVideoGame, 1);
@@ -89,6 +95,7 @@ var myVar = setInterval(ResetGame, 1);
 var Guide = document.getElementById("ChangingInformation");
 
 var TheMenu = document.getElementById("GameGuide");
+var DearDiary = document.getElementById("EntryNumber");
 
 
 var myMusic = document.getElementById("music");
@@ -102,31 +109,15 @@ ShowMenu = 1;
 }
 
 )
-
+/*gamestart*/
 document.getElementById("start").addEventListener('click', function()
 {
-alert("it has begun");
-MagneticEyes = 1;
-document.getElementById('start').style.visibility = 'hidden';
-document.getElementById('guide').style.visibility = 'hidden';
-document.getElementById('ItBegins').style.visibility = 'visible';
-document.getElementById('Pillar1').style.visibility = 'visible';
-document.getElementById('Pillar2').style.visibility = 'visible';
-document.getElementById('Pillar3').style.visibility = 'visible';
-document.getElementById('Pillar4').style.visibility = 'visible';
-document.getElementById('Pillar5').style.visibility = 'visible';
-document.getElementById('Pillar6').style.visibility = 'visible';
-document.getElementById('VerzikVitur').style.visibility = 'visible';
-ShowMenu = 0;
-document.getElementById("pageshift").style.visibility = "hidden";
-document.getElementById("background").style.visibility = "visible";
-});
-
-document.getElementById("wegoagain").addEventListener('click', function()
-{
-alert("Here we go again!");
-BossHealth = 30000;
- PlayerHP = 200;
+alert("Best of luck adventurer!");
+myMusic.currentTime = 0;
+myMusic.volume = 1;
+HardMode = 1;
+BossHealth = 15000*HardMode;
+ PlayerHP = 400/HardMode;
  PillarOne = 600;
  PillarTwo = 600;
  PillarThree = 600;
@@ -140,7 +131,7 @@ BossHealth = 30000;
  SafetyProtocol = 0;
  ReadyAimFire = 0;
 
- PrimedProjectile = 1;
+ PrimedProjectile = 0;
  Target = 0;
 
  HideState = 0;
@@ -162,8 +153,86 @@ BossHealth = 30000;
  SpecBarShowing = 0;
  PillarDisplay = 0;
 
- DawnbringerX = 0;
- DawnbringerY = 0;
+ LaunchTheDawn = 0;
+ Critical = 0;
+ HealthTransparency = 0;
+ CalculateHealth = 0;
+ StartingBlast = 0;
+ Enrage = 0;
+
+ DisplayVerzikHealth = 0;
+ HideVerzikHealth = 0;
+ CalculateVerzHealth = 0;
+
+ EmptyOut = 0;
+ DisplayOfDeath = 0;
+
+ TimeTracker = 0;
+ EndTime = 0;
+ FareWell = 300;
+ HideMessage = 0;
+ killmusicfunction = 0;
+ EnragePriority = 0;
+ document.getElementById("ItBegins").style.marginTop = "220px";
+ document.getElementById("ItBegins").style.marginLeft = "280px";
+document.getElementById('start').style.visibility = 'hidden';
+document.getElementById('start2').style.visibility= "hidden";
+document.getElementById('guide').style.visibility = 'hidden';
+document.getElementById('ItBegins').style.visibility = 'visible';
+document.getElementById('Pillar1').style.visibility = 'visible';
+document.getElementById('Pillar2').style.visibility = 'visible';
+document.getElementById('Pillar3').style.visibility = 'visible';
+document.getElementById('Pillar4').style.visibility = 'visible';
+document.getElementById('Pillar5').style.visibility = 'visible';
+document.getElementById('Pillar6').style.visibility = 'visible';
+document.getElementById('VerzikVitur').style.visibility = 'visible';
+ShowMenu = 0;
+document.getElementById("pageshift").style.visibility = "hidden";
+document.getElementById("background").style.visibility = "visible";
+});
+/*hardmode*/
+document.getElementById("start2").addEventListener('click', function()
+{
+alert("You're in for a treat foolish adventurer.");
+HardMode = 2;
+myMusic.currentTime = 0;
+myMusic.volume = 1;
+BossHealth = 15000*HardMode;
+ PlayerHP = 400/HardMode;
+ PillarOne = 600;
+ PillarTwo = 600;
+ PillarThree = 600;
+ PillarFour = 600;
+ PillarFive = 600;
+ PillarSix = 600;
+ movevertical = 220;
+ movehorizontal = 280;
+ VerzikAttack = 0;
+ MagneticEyes = 1;
+ SafetyProtocol = 0;
+ ReadyAimFire = 0;
+
+ PrimedProjectile = 0;
+ Target = 0;
+
+ HideState = 0;
+ HidePlayerHealth = 0;
+
+ Primed = 0;
+ Charge = 0;
+ Cooldown = 0;
+ ShowBar = 0;
+
+ DeathState = 1;
+ ProjectileX = 10;
+ ProjectileY = 280;
+
+ PlayerY = 0;
+ PlayerX = 0;
+
+
+ SpecBarShowing = 0;
+ PillarDisplay = 0;
 
  LaunchTheDawn = 0;
  Critical = 0;
@@ -181,13 +250,173 @@ BossHealth = 30000;
 
  TimeTracker = 0;
  EndTime = 0;
- FareWell = 1000;
+ FareWell = 300;
+ HideMessage = 0;
+ killmusicfunction = 0;
+ EnragePriority = 0;
+ document.getElementById("ItBegins").style.marginTop = "220px";
+ document.getElementById("ItBegins").style.marginLeft = "280px";
+document.getElementById('start').style.visibility = 'hidden';
+document.getElementById('start2').style.visibility = 'hidden';
+document.getElementById('guide').style.visibility = 'hidden';
+document.getElementById('ItBegins').style.visibility = 'visible';
+document.getElementById('Pillar1').style.visibility = 'visible';
+document.getElementById('Pillar2').style.visibility = 'visible';
+document.getElementById('Pillar3').style.visibility = 'visible';
+document.getElementById('Pillar4').style.visibility = 'visible';
+document.getElementById('Pillar5').style.visibility = 'visible';
+document.getElementById('Pillar6').style.visibility = 'visible';
+document.getElementById('VerzikVitur').style.visibility = 'visible';
+ShowMenu = 0;
+document.getElementById("pageshift").style.visibility = "hidden";
+document.getElementById("background").style.visibility = "visible";
+});
+/*gameover*/
+document.getElementById("TotalRecall").addEventListener('click', function()
+{
+  myMusic.volume = 0;
+if (HardMode == 1)
+{
+alert("Congratulations on beating the game, but just know that she's not actually dead... You'll have to return to her throne room and face her again. (Hard Mode)");
+Completion = 1;
+}
+
+if (HardMode==2)
+{
+  alert("You may have bested me... but just wait for when even harder mode gets coded. I'll be waiting until then.");
+HardModeDone = 1;
+}
+ VerzikAttack = 0;
+ MagneticEyes = 0;
+ SafetyProtocol = 0;
+ ReadyAimFire = 0;
+
+ PrimedProjectile = 0;
+ Target = 0;
+
+ HideState = 0;
+ HidePlayerHealth = 0;
+
+ Primed = 0;
+ Charge = 0;
+ Cooldown = 0;
+ ShowBar = 0;
+
+ DeathState = 0;
+ ProjectileX = 10;
+ ProjectileY = 280;
+
+ PlayerY = 0;
+ PlayerX = 0;
+
+
+ SpecBarShowing = 0;
+ PillarDisplay = 0;
+
+ LaunchTheDawn = 0;
+ Critical = 0;
+ HealthTransparency = 0;
+ CalculateHealth = 0;
+ StartingBlast = 0;
+ Enrage = 0;
+
+ DisplayVerzikHealth = 0;
+ HideVerzikHealth = 0;
+ CalculateVerzHealth = 0;
+
+ EmptyOut = 0;
+ DisplayOfDeath = 0;
+
+ TimeTracker = 0;
+ EndTime = 0;
+ HideMessage = 0;
+ EnragePriority = 0;
+
+document.getElementById('start').style.visibility = 'visible';
+document.getElementById('start2').style.visibility = 'visible';
+document.getElementById('guide').style.visibility = 'visible';
+document.getElementById('ItBegins').style.visibility = 'hidden';
+document.getElementById('Pillar1').style.visibility = 'hidden';
+document.getElementById('Pillar2').style.visibility = 'hidden';
+document.getElementById('Pillar3').style.visibility = 'hidden';
+document.getElementById('Pillar4').style.visibility = 'hidden';
+document.getElementById('Pillar5').style.visibility = 'hidden';
+document.getElementById('Pillar6').style.visibility = 'hidden';
+document.getElementById('VerzikVitur').style.visibility = 'hidden';
+ShowMenu = 0;
+document.getElementById("background").style.visibility = "hidden";
+document.getElementById("MissionComplete").style.visibility = "hidden";
+document.getElementById("TotalRecall").style.visibility = "hidden";
+
+myMusic.currentTime = 0;
+myMusic.pause;
+});
+
+
+/*reset*/
+document.getElementById("wegoagain").addEventListener('click', function()
+{
+alert("Here we go again!");
+BossHealth = 15000*HardMode;
+ PlayerHP = 400/HardMode;
+ PillarOne = 600;
+ PillarTwo = 600;
+ PillarThree = 600;
+ PillarFour = 600;
+ PillarFive = 600;
+ PillarSix = 600;
+ movevertical = 220;
+ movehorizontal = 280;
+ VerzikAttack = 0;
+ MagneticEyes = 1;
+ SafetyProtocol = 0;
+ ReadyAimFire = 0;
+
+ PrimedProjectile = 0;
+ Target = 0;
+
+ HideState = 0;
+ HidePlayerHealth = 0;
+
+ Primed = 0;
+ Charge = 0;
+ Cooldown = 0;
+ ShowBar = 0;
+
+ DeathState = 1;
+ ProjectileX = 10;
+ ProjectileY = 280;
+
+ PlayerY = 0;
+ PlayerX = 0;
+
+
+ SpecBarShowing = 0;
+ PillarDisplay = 0;
+
+ LaunchTheDawn = 0;
+ Critical = 0;
+ HealthTransparency = 0;
+ CalculateHealth = 0;
+ StartingBlast = 0;
+ Enrage = 0;
+
+ DisplayVerzikHealth = 0;
+ HideVerzikHealth = 0;
+ CalculateVerzHealth = 0;
+
+ EmptyOut = 0;
+ DisplayOfDeath = 0;
+
+ TimeTracker = 0;
+ EndTime = 0;
+ FareWell = 300;
  HideMessage = 0;
  killmusicfunction = 0;
  EnragePriority = 0;
 
-document.getElementById("ItBegins").marginTop = "220px";
-document.getElementById("ItBegins").marginLeft = "280px";
+document.getElementById("ItBegins").style.marginTop = "220px";
+document.getElementById("ItBegins").style.marginLeft = "280px";
 document.getElementById('start').style.visibility = 'hidden';
 document.getElementById('guide').style.visibility = 'hidden';
 document.getElementById('ItBegins').style.visibility = 'visible';
@@ -198,6 +427,9 @@ document.getElementById('Pillar4').style.visibility = 'visible';
 document.getElementById('Pillar5').style.visibility = 'visible';
 document.getElementById('Pillar6').style.visibility = 'visible';
 document.getElementById('VerzikVitur').style.visibility = 'visible';
+
+document.getElementById("HealthBar").style.visibility = "visible";
+document.getElementById("HealthBarRed").style.visibility = "visible";
 ShowMenu = 0;
 document.getElementById("pageshift").style.visibility = "hidden";
 document.getElementById("background").style.visibility = "visible";
@@ -462,9 +694,9 @@ if ((par.keyCode===32)&&(!(PlayerHP<=0))&&(MagneticEyes==1)&&(Cooldown==0)&&(Pri
 	document.getElementById("SpecialAttackBar").style.visibility = 'visible';
 	document.getElementById("SpecialAttackBarGray").style.visibility = 'visible';
 	document.getElementById("SpecialAttackBar").style.width = ShowBar + "px";
-	document.getElementById("SpecialAttackBar").style.marginTop = movevertical + -20 + "px";
+	document.getElementById("SpecialAttackBar").style.marginTop = movevertical  -20 + "px";
 	document.getElementById("SpecialAttackBar").style.marginLeft = movehorizontal + "px";
-	document.getElementById("SpecialAttackBarGray").style.marginTop = movevertical + -20 + "px";
+	document.getElementById("SpecialAttackBarGray").style.marginTop = movevertical -20 + "px";
 	document.getElementById("SpecialAttackBarGray").style.marginLeft = movehorizontal + "px";
 	document.getElementById("dawnprojectile").style.marginLeft = DawnbringerX + "px";
 	document.getElementById("dawnprojectile").style.marginTop = DawnbringerY + "px";
@@ -602,7 +834,8 @@ function ProjectileTrace()
 		document.getElementById("dawnprojectile").style.visibility = "hidden";
 		BossHealth = BossHealth - DawnBringerBlast;
 		document.getElementById("dawnbringerstatus").innerHTML = "Your dawnbringer sparkles brightly! The boss took " + DawnBringerBlast + " Damage! " + BossHealth + " Health remaining.";
-		EmptyOut = 450;
+    Critical = 0;
+    EmptyOut = 450;
 		LaunchTheDawn = 0;
 		StartingBlast = 0;
 		DisplayVerzikHealth = 1;
@@ -625,7 +858,7 @@ if ((MagneticEyes == 1)&&(!(BossHealth<=0))&&(DeathState==1))
 	myMusic.loop = true;
 	}
 
-if (BossHealth>10000)
+if (BossHealth>(5000*HardMode))
 {
 VerzikAttack = VerzikAttack + 1;
 }
@@ -648,7 +881,7 @@ else {
 
 }
 
-if ((VerzikAttack>=600)&&(!(BossHealth<=0)))
+if ((VerzikAttack>=600)&&(!(BossHealth<=0))&&(PrimedProjectile==0))
 {
 
 	DisplayOfDeath = (1/400)*(VerzikAttack - 600);
@@ -664,7 +897,7 @@ else if ((VerzikAttack>=600)&&((BossHealth<=0)))
 	document.getElementById("DeathAwaits").style.opacity = DisplayOfDeath;
 }
 
-if ((VerzikAttack>=1000)&&(MagneticEyes == 1))
+if ((VerzikAttack>=1000)&&(MagneticEyes == 1)&&(Target==0))
 
 
 {
@@ -859,7 +1092,7 @@ else if ((PrimedProjectile==1)&&(Target==2))
 		document.getElementById("Pillar1").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 		HideMessage = 130;
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==1)
 
 		{
 			PlayerHP = 0;
@@ -947,7 +1180,7 @@ else if ((PrimedProjectile==1)&&(Target==3))
 		document.getElementById("Pillar2").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 		HideMessage = 130;
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==2)
 
 		{
 			PlayerHP = 0;
@@ -1033,7 +1266,7 @@ else if ((PrimedProjectile==1)&&(Target==4))
 		document.getElementById("Pillar3").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 		HideMessage = 130;
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==3)
 
 		{
 			PlayerHP = 0;
@@ -1119,7 +1352,7 @@ else if ((PrimedProjectile==1)&&(Target==5))
 		document.getElementById("Pillar4").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==4)
 
 		{
 			PlayerHP = 0;
@@ -1206,7 +1439,7 @@ else if ((PrimedProjectile==1)&&(Target==6))
 		document.getElementById("Pillar5").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==5)
 
 		{
 			PlayerHP = 0;
@@ -1293,7 +1526,7 @@ else if ((PrimedProjectile==1)&&(Target==7))
 		document.getElementById("Pillar6").style.visibility = 'hidden';
 		document.getElementById("informationprinter").innerHTML = "The pillar has fallen! You'll need to find new cover now!";
 
-		if (SafetyProtocol==1)
+		if (ReadyAimFire==6)
 
 		{
 			PlayerHP = 0;
@@ -1594,7 +1827,7 @@ function DisplayPlayerHitpoints()
 {
 
 
-	CalcPlayerHealth = (30/200)*PlayerHP;
+	CalcPlayerHealth = (30/(400/HardMode))*PlayerHP;
 
 	if (SpecBarShowing==0)
 	{
@@ -1654,7 +1887,7 @@ document.getElementById("ItBegins").style.backgroundImage = "url('images/deadpla
 
 function DisplayBossHealth()
 {
-	CalculateVerzHealth = (90/30000)*BossHealth;
+	CalculateVerzHealth = (90/(15000*HardMode))*BossHealth;
 	document.getElementById("VerzikHP").style.width = CalculateVerzHealth + "px";
 
 if ((DisplayVerzikHealth==1)&&(HideVerzikHealth==0))
@@ -1729,32 +1962,37 @@ else
 
 
 }
+function TrackTheSeconds()
+{
+  if ((MagneticEyes==1)&&(!(BossHealth<=0)))
+  {
+    TimeTracker = TimeTracker + 1;
+  }
+}
 
 function TrackOfTime()
 {
-	if ((MagneticEyes==1)&&(!(BossHealth<=0)))
-	{
-		TimeTracker = TimeTracker + 1;
-	}
 
-	else if ((BossHealth<=0)&&(!(FareWell<=1)))
+  if ((BossHealth<=0)&&(!(FareWell<=1)))
 	{
 	FareWell = FareWell - 1;
-	myMusic.volume = FareWell/1000;
+	myMusic.volume = FareWell/300;
 	}
 
 	else if (FareWell<=1)
 	{	FareWell = 0;
 		myMusic.pause;
+    myMusic.loop = false;
 		myMusic.currentTime = 0;
 		killmusicfunction = 1;
 	}
 
-	else if ((MagneticEyes==1)&&(BossHealth<=0)&&(!(TimeTracker<=0)))
+	if ((BossHealth<=0)&&((TimeTracker>0)))
 
 	{
-		EndTime = TimeTracker/1000;
-		document.getElementById("informationprinter").innerHTML = "The boss has fallen! Encounter Time: " + EndTime + " seconds!";
+		EndTime = TimeTracker;
+    document.getElementById("MissionComplete").style.visibility = "visible";
+		document.getElementById("MissionComplete").innerHTML = "The boss has fallen! Encounter Time: " + EndTime + " seconds!";
 	}
 
 
@@ -1796,42 +2034,58 @@ TheMenu.style.visibility = "visible";
 if (Page==1)
 {
 	Guide.innerHTML = "Hello brave adventurer. I am a former spirit, of a brave adventurer who found their fate at the hands of the boss you are about to face off against: Verzik Vitur. I haunt the halls of this HTML file, in hopes of someone to slay the boss and save all of the land from her treacherous rule.";
+DearDiary.innerHTML = "1 out of 6";
 }
 
 else if (Page==2)
 
 {
 Guide.innerHTML = "Movement: To move, use the WASD keys. Be aware, you won’t be able to move through any of the pillars.";
+DearDiary.innerHTML = "2 out of 6";
 }
 
 else if (Page==3)
 
 {
 Guide.innerHTML = "Damaging the boss: Before entering the room, you must’ve found a staff known as the dawnbringer. You must charge it by holding the Spacebar key. The longer you charge it for, the more damage your attack will do.";
-DearDiary = "3 out of 6";
+DearDiary.innerHTML = "3 out of 6";
 }
 
 else if (Page==4)
 
 {
 Guide.innerHTML = "Once you let go of the Spacebar key, whatever charge you have will be utilized to damage the boss. To fire off a charged shot, press the Spacebar key again to deal damage to the boss.";
-DearDiary = "4 out of 6";
+DearDiary.innerHTML = "4 out of 6";
 }
 
 else if (Page==5)
 
 {
 Guide.innerHTML = "Pillars: in the arena, there are various pillars you can utilize for cover, but keep in mind, only a few areas in the pillars will provide sufficient cover from the boss’s attacks. You can also charge your dawnbringer behind pillars, but keep in mind, you cannot attack the boss while in cover. If you are by a pillar as it falls, you will die. So, make sure you don’t camp one pillar.";
-DearDiary = "5 out of 6";
+DearDiary.innerHTML = "5 out of 6";
 }
 
 else if (Page==6)
 
 {
 Guide.innerHTML = "Boss’s Attacks: The boss charges up an attack, and once it’s been released, it will continue to track it's initial target. Her attacks have a long cooldown, so the ideal time to strike would be after she launches a projectile. That’s all the information I can offer you. Best of luck adventurer, don’t share the same fate as I.";
-DearDiary = "6 out of 6";
+DearDiary.innerHTML = "6 out of 6";
 }
 
+else if (Page==7)
+
+{
+  if (Completion ==1)
+  {
+  Guide.innerHTML = "FOOLISH MORTAL! DO YOU THINK YOU CAN FIND THE ANSWER TO BEAT ME ON HARD MODE? ALL I CAN SAY IS GET GOOD MORTAL!";
+  DearDiary.innerHTML = "? out of ?";
+}
+else if ((Completion ==1)&&(HardModeDone==1))
+{
+  Guide.innerHTML = "Why are you still reading this? You already beat me at my CURRENT best. What more could you find pondering in the video game guide? Cookies? The solution to world peace? Someone that will get your little brother to stop hogging the XBOX? Well you won't find any of that here sadly. Now SCRAM!";
+  DearDiary.innerHTML = "? out of ?";
+}
+}
 
 }
 
@@ -1854,10 +2108,15 @@ function MenuSwapper(par)
 		Page = Page - 1;
 	}
 
-else	if ((par.keyCode === 68)&&(!(Page==6)))
+else	if ((par.keyCode === 68)&&(!(Page==6))&&(Completion==0))
 	{
 		Page = Page + 1;
 	}
+
+  else	if ((par.keyCode === 68)&&(!(Page==7))&&(Completion==1))
+  	{
+  		Page = Page + 1;
+  	}
 
 	else if (par.keyCode==27)
 	{
@@ -1877,6 +2136,13 @@ if ((MagneticEyes==1)&&(DeathState==0))
 document.getElementById("ResetBoard").style.visibility = "visible";
 document.getElementById("wegoagain").style.visibility = "visible";
 }
+if ((BossHealth<=0)&&(DeathState==1)&&(MagneticEyes==1))
+
+{
+  document.getElementById("TotalRecall").style.visibility = "visible";
+  MagneticEyes = 0;
+}
+
 }
 
 
