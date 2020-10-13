@@ -351,6 +351,96 @@ document.getElementById("TotalRecall").style.visibility = "hidden";
 myMusic.currentTime = 0;
 myMusic.pause;
 });
+/*Loss + Head To Menu*/
+document.getElementById("returntomenu").addEventListener('click', function()
+{
+  myMusic.volume = 0;
+if (Completion==0)
+{
+  alert("COME BACK WHEN YOU HAVE READ THE GAME INSTRUCTIONS FOOL!!!!!");
+}
+
+ VerzikAttack = 0;
+ MagneticEyes = 0;
+ SafetyProtocol = 0;
+ ReadyAimFire = 0;
+
+ PrimedProjectile = 0;
+ Target = 0;
+
+ HideState = 0;
+ HidePlayerHealth = 0;
+
+ Primed = 0;
+ Charge = 0;
+ Cooldown = 0;
+ ShowBar = 0;
+
+ DeathState = 0;
+ ProjectileX = 10;
+ ProjectileY = 280;
+
+ PlayerY = 0;
+ PlayerX = 0;
+
+
+ SpecBarShowing = 0;
+ PillarDisplay = 0;
+
+ LaunchTheDawn = 0;
+ Critical = 0;
+ HealthTransparency = 0;
+ CalculateHealth = 0;
+ StartingBlast = 0;
+ Enrage = 0;
+
+ DisplayVerzikHealth = 0;
+ HideVerzikHealth = 0;
+ CalculateVerzHealth = 0;
+
+ EmptyOut = 0;
+ DisplayOfDeath = 0;
+
+ TimeTracker = 0;
+ EndTime = 0;
+ HideMessage = 0;
+ EnragePriority = 0;
+
+document.getElementById('start').style.visibility = 'visible';
+if (Completion==1)
+{
+document.getElementById('start2').style.visibility = 'visible';
+
+if (HardMode==1)
+{
+  alert("HAHA YOU MAY HAVE BEAT ME ONCE BUT NOT TWICE FOOL!");
+}
+
+else if (HardMode==2)
+{
+  alert("STICK TO EASY MODE PEASANT!");
+}
+
+}
+document.getElementById('guide').style.visibility = 'visible';
+document.getElementById('ItBegins').style.visibility = 'hidden';
+document.getElementById('Pillar1').style.visibility = 'hidden';
+document.getElementById('Pillar2').style.visibility = 'hidden';
+document.getElementById('Pillar3').style.visibility = 'hidden';
+document.getElementById('Pillar4').style.visibility = 'hidden';
+document.getElementById('Pillar5').style.visibility = 'hidden';
+document.getElementById('Pillar6').style.visibility = 'hidden';
+document.getElementById('VerzikVitur').style.visibility = 'hidden';
+ShowMenu = 0;
+document.getElementById("background").style.visibility = "hidden";
+document.getElementById("MissionComplete").style.visibility = "hidden";
+document.getElementById("returntomenu").style.visibility = "hidden";
+document.getElementById("wegoagain").style.visibility = "hidden";
+
+
+myMusic.currentTime = 0;
+myMusic.pause;
+});
 
 
 /*reset*/
@@ -435,6 +525,7 @@ document.getElementById("pageshift").style.visibility = "hidden";
 document.getElementById("background").style.visibility = "visible";
 document.getElementById("ResetBoard").style.visibility = "hidden";
 document.getElementById("wegoagain").style.visibility = "hidden";
+document.getElementById("returntomenu").style.visibility = "hidden";
 });
 
 function PleaseWorkTM(par)
@@ -2143,6 +2234,7 @@ if ((MagneticEyes==1)&&(DeathState==0))
 {
 document.getElementById("ResetBoard").style.visibility = "visible";
 document.getElementById("wegoagain").style.visibility = "visible";
+document.getElementById("returntomenu").style.visibility = "visible";
 }
 if ((BossHealth<=0)&&(DeathState==1)&&(MagneticEyes==1))
 
@@ -2152,11 +2244,3 @@ if ((BossHealth<=0)&&(DeathState==1)&&(MagneticEyes==1))
 }
 
 }
-
-
-/*
-function AchievementHunter ()
-{
-
-}
-*/
