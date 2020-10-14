@@ -189,6 +189,7 @@ document.getElementById('VerzikVitur').style.visibility = 'visible';
 ShowMenu = 0;
 document.getElementById("pageshift").style.visibility = "hidden";
 document.getElementById("background").style.visibility = "visible";
+document.getElementById("HealthBar").style.visibility = "visible";
 });
 /*hardmode*/
 document.getElementById("start2").addEventListener('click', function()
@@ -283,8 +284,8 @@ Completion = 1;
 
 if (HardMode==2)
 {
+  HardModeDone = 1;
   alert("You may have bested me... but just wait for when even harder mode gets coded. I'll be waiting until then.");
-HardModeDone = 1;
 }
  VerzikAttack = 0;
  MagneticEyes = 0;
@@ -2174,7 +2175,7 @@ DearDiary.innerHTML = "6 out of 6";
 else if (Page==7)
 
 {
-  if (Completion ==1)
+  if ((Completion ==1)&&(HardModeDone==0))
   {
   Guide.innerHTML = "FOOLISH MORTAL! DO YOU THINK YOU CAN FIND THE ANSWER TO BEAT ME ON HARD MODE? ALL I CAN SAY IS GET GOOD MORTAL!";
   DearDiary.innerHTML = "? out of ?";
