@@ -64,6 +64,11 @@ var ShowMenu = 0;
 var HardMode = 1;
 var Completion = 0;
 var HardModeDone = 0;
+let ScoreTracker = 0;
+var AdventurersName = "";
+let GameMode = "";
+
+let ScoreBoard = [];
 
 var myVar = setInterval(ProjectileOfDeath, 1);
 
@@ -113,8 +118,8 @@ ShowMenu = 1;
 document.getElementById("start").addEventListener('click', function()
 {
 alert("Best of luck adventurer!");
-myMusic.currentTime = 0;
-myMusic.volume = 1;
+killmusicfunction = 0;
+GameMode = "Normal";
 HardMode = 1;
 BossHealth = 15000*HardMode;
  PlayerHP = 400/HardMode;
@@ -171,7 +176,6 @@ BossHealth = 15000*HardMode;
  EndTime = 0;
  FareWell = 300;
  HideMessage = 0;
- killmusicfunction = 0;
  EnragePriority = 0;
  document.getElementById("ItBegins").style.marginTop = "220px";
  document.getElementById("ItBegins").style.marginLeft = "280px";
@@ -195,9 +199,9 @@ document.getElementById("HealthBar").style.visibility = "visible";
 document.getElementById("start2").addEventListener('click', function()
 {
 alert("You're in for a treat foolish adventurer.");
+GameMode = "Hard"
 HardMode = 2;
-myMusic.currentTime = 0;
-myMusic.volume = 1;
+killmusicfunction = 0;
 BossHealth = 15000*HardMode;
  PlayerHP = 400/HardMode;
  PillarOne = 600;
@@ -253,7 +257,6 @@ BossHealth = 15000*HardMode;
  EndTime = 0;
  FareWell = 300;
  HideMessage = 0;
- killmusicfunction = 0;
  EnragePriority = 0;
  document.getElementById("ItBegins").style.marginTop = "220px";
  document.getElementById("ItBegins").style.marginLeft = "280px";
@@ -275,7 +278,9 @@ document.getElementById("background").style.visibility = "visible";
 /*gameover*/
 document.getElementById("TotalRecall").addEventListener('click', function()
 {
+  myMusic.pause();
   myMusic.volume = 0;
+  myMusic.currentTime = 0;
 if (HardMode == 1)
 {
 alert("Congratulations on beating the game, but just know that she's not actually dead... You'll have to return to her throne room and face her again. (Hard Mode)");
@@ -348,14 +353,13 @@ ShowMenu = 0;
 document.getElementById("background").style.visibility = "hidden";
 document.getElementById("MissionComplete").style.visibility = "hidden";
 document.getElementById("TotalRecall").style.visibility = "hidden";
-
-myMusic.currentTime = 0;
-myMusic.pause;
 });
 /*Loss + Head To Menu*/
 document.getElementById("returntomenu").addEventListener('click', function()
 {
+  myMusic.pause();
   myMusic.volume = 0;
+  myMusic.currentTime = 0;
 if (Completion==0)
 {
   alert("COME BACK WHEN YOU HAVE READ THE GAME INSTRUCTIONS FOOL!!!!!");
@@ -437,10 +441,6 @@ document.getElementById("background").style.visibility = "hidden";
 document.getElementById("MissionComplete").style.visibility = "hidden";
 document.getElementById("returntomenu").style.visibility = "hidden";
 document.getElementById("wegoagain").style.visibility = "hidden";
-
-
-myMusic.currentTime = 0;
-myMusic.pause;
 });
 
 
@@ -528,6 +528,22 @@ document.getElementById("ResetBoard").style.visibility = "hidden";
 document.getElementById("wegoagain").style.visibility = "hidden";
 document.getElementById("returntomenu").style.visibility = "hidden";
 });
+
+function NameOfTheGame()
+{
+  var person = prompt("Fellow adventurer... What do they call you by?");
+
+  if (person == null || person == ""){
+  AdventurersName = "Adventurer";
+  console.log(AdventurersName);
+}
+
+else {
+  AdventurersName = person;
+  console.log(AdventurersName);
+}
+  alert("Welcome to the theatre, " + AdventurersName + ". I wish you only the best of luck.");
+}
 
 function PleaseWorkTM(par)
 {
@@ -2067,6 +2083,7 @@ function TrackTheSeconds()
   if ((MagneticEyes==1)&&(!(BossHealth<=0)))
   {
     TimeTracker = TimeTracker + 1;
+    ScoreTracker = 1;
   }
 }
 
@@ -2079,11 +2096,9 @@ function TrackOfTime()
 	myMusic.volume = FareWell/300;
 	}
 
-	else if (FareWell<=1)
-	{	FareWell = 0;
-		myMusic.pause;
-    myMusic.loop = false;
-		myMusic.currentTime = 0;
+	else if (FareWell<=1 || MagneticEyes == 0)
+	{
+    myMusic.volume = 0;
 		killmusicfunction = 1;
 	}
 
@@ -2091,6 +2106,12 @@ function TrackOfTime()
 
 	{
 		EndTime = TimeTracker;
+    if (ScoreTracker == 1)
+  {
+    ScoreBoard.push({"Name": AdventurersName, "Time": + EndTime, "Difficulty": GameMode,});
+    ScoreTracker = 0 ;
+    console.log(ScoreBoard);
+  }
     document.getElementById("MissionComplete").style.visibility = "visible";
 		document.getElementById("MissionComplete").innerHTML = "The boss has fallen! Encounter Time: " + EndTime + " seconds!";
 	}
