@@ -2035,7 +2035,7 @@ document.getElementById("VerzikHPRed").style.opacity = "0.0";
 
 if ((Enrage>0)&&(!(BossHealth<=0)))
 {
-document.getElementById("VerzikVitur").style.backgroundImage = "url('images/finalbossenraged.jpg')";
+document.getElementById("VerzikVitur").style.backgroundImage = "url('images/finalbossenraged.gif')";
 }
 
 if (BossHealth <= 0)
